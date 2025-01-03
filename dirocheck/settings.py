@@ -135,5 +135,14 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [ config("HOST") , "http://192.168.100.5:3000", ]
 
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
