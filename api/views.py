@@ -20,6 +20,17 @@ def delete_shop(request, pk):
     shop.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 
+@api_view(['POST'])
+def create_shop(request):
+    if request.method == 'POST':
+        # Asegúrate de que se manejen correctamente los archivos
+        serializer = ShopSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
