@@ -133,7 +133,7 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
-CORS_ALLOWED_ORIGINS = [ config("HOST") , "http://192.168.100.5:3000", ]
+CORS_ALLOWED_ORIGINS = [ config("HOST") ]
 
 CORS_ALLOW_METHODS = [
     'GET',
