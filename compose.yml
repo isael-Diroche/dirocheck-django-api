@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    # image:
+    # command: 
+    working_dir: /usr/src/app
+    ports:
+      - 8000:8000
+    volumes: 
+      - ./:/usr/src/app
+    env_file:
+      - .env
+    environment:
+      - SECRET_KEY=${SECRET_KEY} 
+      - DEBUG=${DEBUG}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - HOST=${HOST}
