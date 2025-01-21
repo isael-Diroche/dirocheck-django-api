@@ -3,7 +3,7 @@ from django.db import models
 class Shop(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=255, blank=True, null=True)
-    image = models.ImageField(upload_to='shop_images/', blank=True, null=True, default='shop_images/image_default.webp')
+    image = models.ImageField(upload_to='shop_images/', blank=True, null=True, default='/default.png')
     contact_number = models.CharField(max_length=17, blank=True, null=True)
     type = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -23,7 +23,7 @@ class Product(models.Model):
         choices=[('units', 'Unidades'), ('lbs', 'Libras')]
     )
     expiration_date = models.DateField(blank=True, null=True)
-    image = models.ImageField(upload_to='product_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='product_images/', blank=True, null=True, default='/default.png')
     total = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
