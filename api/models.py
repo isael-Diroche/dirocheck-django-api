@@ -20,7 +20,7 @@ class Product(models.Model):
     stock = models.IntegerField()
     unit_type = models.CharField(
         max_length=10,
-        choices=[('units', 'Unidades'), ('lbs', 'Libras')]
+        choices=[('units', 'Unidades'), ('lbs', 'Libras'), ('paqs', 'Paquetes')]
     )
     expiration_date = models.DateField(blank=True, null=True)
     image = models.ImageField(upload_to='product_images/', blank=True, null=True, default='/default.png')
@@ -37,7 +37,7 @@ class Product(models.Model):
 
 class Inventory(models.Model):
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name='inventories')
-    products = models.ManyToManyField(Product, related_name='inventories', blank=True)  # `blank=True` para permitir vacío
+    products = models.ManyToManyField(Product, related_name='inventories', blank=True)
     name = models.CharField(max_length=100)  # Name of the inventory, e.g., month
     total = models.DecimalField(max_digits=10, decimal_places=2, editable=False, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
