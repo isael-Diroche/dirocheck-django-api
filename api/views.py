@@ -9,7 +9,6 @@ from .serializer import ProductSerializer, InventorySerializer, ShopSerializer
 from .models import Product, Inventory, Shop
 
 # Create your views here.
-    
 class ShopViewSet(ModelViewSet):
     queryset = Shop.objects.all()
     serializer_class = ShopSerializer
@@ -34,7 +33,7 @@ def create_shop(request):
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    
+
 class InventoryViewSet(ModelViewSet):
     queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
