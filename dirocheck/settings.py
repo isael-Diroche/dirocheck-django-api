@@ -147,5 +147,5 @@ CORS_ALLOW_METHODS = [
     'OPTIONS',
 ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/public/media/'
+MEDIA_ROOT = BASE_DIR / 'public/media'
