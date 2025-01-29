@@ -23,5 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
+    # path('api/v1/', include('module.product.urls'), name="product"),
+    # path('api/v1/', include('module.inventory.urls'), name="inventory"),
+    # path('api/v1/', include('module.shop.urls'), name="shop"),
     path('docs/', include_docs_urls(title='Dirocheck API Documentation'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
